@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', "ArticlesController@publicIndex");
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Route::resource('customers', 'CustomerController');
+
+Route::resource('articles', 'ArticlesController');
+
+Route::resource('categories', 'CategoriesController');
+
+Route::resource('comments', 'CommentsController');
+
+Route::resource('users', 'UsersController');
